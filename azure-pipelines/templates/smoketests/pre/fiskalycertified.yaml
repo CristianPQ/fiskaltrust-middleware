@@ -11,8 +11,8 @@ steps:
 - pwsh: |
 
 
-    Write-Host $([Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes(${{ parameters.apikey }})))
-    Write-Host $([Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes(${{ parameters.apisecret }})))
+    Write-Host $([Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes("${{ parameters.apikey }}")))
+    Write-Host $([Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes("${{ parameters.apisecret }}")))
     
     $body = @{
       "api_key" = "${{ parameters.apikey }}"; 
