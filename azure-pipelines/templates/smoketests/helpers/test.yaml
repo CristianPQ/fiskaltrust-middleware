@@ -55,6 +55,9 @@ jobs:
           cashbox: ${{ parameters.cashbox }}
           target: ${{ parameters.target }}
 
+      - pwsh: cp "$(Build.SourcesDirectory)/launcher/configuration.json" "$(Build.SourcesDirectory)/logs/config.json"
+        displayName: Log Config
+
       - template: run.yaml
         parameters:
           run: ${{ parameters.post }}
